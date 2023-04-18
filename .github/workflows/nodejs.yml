@@ -43,10 +43,12 @@ jobs:
             docker run --rm -v ${{ github.workspace }}:/ws:rw --workdir=/ws \
               arm64v8/ubuntu:20.04 \
               bash -exc 'apt-get update && \
+              apt-get install curl && \
               apt-get install sudo -y && \
-              sudo apt install Node.js && \
-              sudo apt install npm && \
-              Node.js -v && npm --version  && \
+              curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash  && \
+              nvm install node && \
+              node -version  && \
+              npm --version && \
               cd nodejs/serverless-microservices-functionapp-triparchiver && \
               npm install && \
               npm run pack'
