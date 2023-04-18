@@ -46,5 +46,4 @@ jobs:
               cd dotnet && \
               dotnet restore && \
               dotnet build -c Release && \
-              dotnet test -c Release && \
-              cd .. && \
+              dotnet test -c Release && \'
