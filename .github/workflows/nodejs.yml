@@ -2,9 +2,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: 
-      - '*'
-    paths: [ 'nodejs/**' ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -49,5 +47,6 @@ jobs:
               sudo apt install Node.js && \
               sudo apt install npm && \
               Node.js -v && npm --version  && \
+              cd nodejs/serverless-microservices-functionapp-triparchiver && \
               npm install && \
               npm run pack'
