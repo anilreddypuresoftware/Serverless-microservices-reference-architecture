@@ -43,8 +43,7 @@ jobs:
               export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools && \
               export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1 && \
               dotnet --version && \
-              dotnet restore && \
-              dotnet nuget locals all --clear && \
+              cd dotnet && \
               dotnet build -c Release && \
               dotnet test -c Release && \
               deactivate'
