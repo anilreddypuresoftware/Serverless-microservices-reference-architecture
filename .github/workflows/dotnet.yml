@@ -40,7 +40,6 @@ jobs:
               chmod +x dotnet-install.sh && \
               ./dotnet-install.sh -c Current && \
               ./dotnet-install.sh -c 6.0 && \
-              echo 'export PATH="$PATH:/home/$USER/.dotnet/"' >> ~/.bashrc && \
               ./dotnet-install.sh -c Current --runtime aspnetcore && \
               ./dotnet-install.sh -c Current --runtime dotnet && \
               cd dotnet && \
