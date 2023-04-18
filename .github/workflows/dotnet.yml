@@ -39,6 +39,8 @@ jobs:
               wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh && \
               sudo chmod +x ./dotnet-install.sh && \
               ./dotnet-install.sh --channel 7.0 && \
+              dotnet --version && \
+              cd dotnet && \
               dotnet restore && \
               dotnet build -c Release && \
               dotnet test -c Release && \
