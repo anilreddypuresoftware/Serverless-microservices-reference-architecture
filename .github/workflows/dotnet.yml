@@ -44,6 +44,8 @@ jobs:
               export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1 && \
               dotnet --version && \
               cd dotnet && \
+              dotnet restore && \
               dotnet build -c Release && \
               dotnet test -c Release && \
+              cd .. && \
               deactivate'
