@@ -36,15 +36,13 @@ jobs:
               bash -exc 'apt-get update && \
               apt-get install sudo && \
               apt install wget -y && \
-              wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \
-              sudo dpkg -i packages-microsoft-prod.deb && \
-              rm packages-microsoft-prod.deb && \
-              sudo apt update && \
-              sudo apt install -y apt-transport-https && \
-              sudo apt install dotnet-sdk-6.0 && \
-              sudo apt-get install aspnetcore-runtime-6.0 && \
-              sudo apt-get install dotnet-runtime-6.0 && \
-              dotnet --version && \
+              wget https://dot.net/v1/dotnet-install.sh && \
+              chmod +x dotnet-install.sh && \
+              ./dotnet-install.sh -c Current && \
+              ./dotnet-install.sh -c 6.0 && \
+              echo 'export PATH="$PATH:/home/$USER/.dotnet/"' >> ~/.bashrc && \
+              ./dotnet-install.sh -c Current --runtime aspnetcore && \
+              ./dotnet-install.sh -c Current --runtime dotnet && \
               cd dotnet && \
               dotnet restore && \
               dotnet build -c Release && \
