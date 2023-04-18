@@ -36,9 +36,11 @@ jobs:
               bash -exc 'apt-get update && \
               apt-get install sudo && \
               apt install wget -y && \
-              wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh && \
-              sudo chmod +x ./dotnet-install.sh && \
-              ./dotnet-install.sh --channel 7.0 && \
+              wget https://github.com/dotnet/sdk/archive/refs/tags/v7.0.203.tar.gz && \
+              DOTNET_FILE=v7.0.203.tar.gz && \
+              export DOTNET_ROOT=$(pwd)/.dotnet && \
+              mkdir -p "$DOTNET_ROOT" && tar zxf "$DOTNET_FILE" -C "$DOTNET_ROOT" && \
+              export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools && \
               dotnet --version && \
               cd dotnet && \
               dotnet restore && \
