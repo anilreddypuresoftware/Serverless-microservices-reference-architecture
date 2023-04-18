@@ -51,6 +51,6 @@ jobs:
               node --version  && \
               npm --version && \
               cd web/serverless-microservices-web && \ 
-              npm install && \
+              npm install -g npm@9.6.4 && \
               npm run build'    
   
