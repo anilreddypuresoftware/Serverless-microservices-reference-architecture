@@ -36,6 +36,7 @@ jobs:
               bash -exc 'apt-get update && \
               apt-get install sudo && \
               apt install wget -y && \
+              sudo apt install snapd && \
               sudo snap install dotnet-sdk --classic --channel=6.0 && \
               sudo snap alias dotnet-sdk.dotnet dotnet && \
               dotnet --version && \
