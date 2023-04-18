@@ -45,6 +45,7 @@ jobs:
               dotnet --version && \
               cd dotnet && \
               dotnet restore && \ 
+              dotnet nuget locals all --clear && \
               dotnet build -c Release && \
               dotnet test -c Release && \
               deactivate'
