@@ -49,7 +49,7 @@ jobs:
               export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" && \
               [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && \
               nvm install node && \
-              node -version  && \
+              node --version  && \
               npm --version && \
               cd nodejs/serverless-microservices-functionapp-triparchiver && \
               npm install && \
