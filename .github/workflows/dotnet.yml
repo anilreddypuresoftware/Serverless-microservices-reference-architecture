@@ -41,6 +41,7 @@ jobs:
               ./dotnet-install.sh --channel 7.0 && \
               export DOTNET_ROOT=$HOME/.dotnet && \
               export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools && \
+              export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1 && \
               dotnet --version && \
               cd dotnet && \
               dotnet restore && \
