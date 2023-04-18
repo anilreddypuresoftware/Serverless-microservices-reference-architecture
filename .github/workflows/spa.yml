@@ -51,7 +51,7 @@ jobs:
               nvm install node && \
               node --version  && \
               npm --version && \
-              cd web/serverless-microservices-web && \
+              cd web/serverless-microservices-web && \ 
               npm install && \ 
               export NODE_OPTIONS=--openssl-legacy-provider && \
               npm run build'
