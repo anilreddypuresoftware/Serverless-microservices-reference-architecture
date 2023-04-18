@@ -22,4 +22,4 @@ bicep/parameters.local.json
 local.settings.json
 test/settings.example.dan.js
 
-__azurite__
+__azurite_*
