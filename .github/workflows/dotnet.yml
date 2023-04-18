@@ -34,6 +34,9 @@ jobs:
             docker run --rm -v ${{ github.workspace }}:/ws:rw --workdir=/ws \
               arm64v8/ubuntu:20.04 \
               bash -exc 'apt-get update && \
+              wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh && \
+              sudo chmod +x ./dotnet-install.sh && \
+              ./dotnet-install.sh --channel 7.0 && \
               dotnet restore && \
               dotnet build -c Release && \
               dotnet test -c Release && \
