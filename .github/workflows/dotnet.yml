@@ -35,7 +35,7 @@ jobs:
               arm64v8/ubuntu:20.04 \
               bash -exc 'apt-get update && \
               apt-get install sudo && \
-              apt-get install wget && \
+              apt install wget -y && \
               wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh && \
               sudo chmod +x ./dotnet-install.sh && \
               ./dotnet-install.sh --channel 7.0 && \
