@@ -31,3 +31,23 @@ jobs:
         cache-dependency-path: ./nodejs/serverless-microservices-functionapp-triparchiver
     - run: npm install
     - run: npm run pack
+    
+  armv64_job:
+      name: Build and Test for arm64
+      runs-on: ubuntu-20.04
+      steps:
+        - uses: actions/checkout@v2
+        - name: Set up QEMU
+          id: qemu
+          uses: docker/setup-qemu-action@v1
+        - name: Install and Run tests
+          run: |
+            docker run --rm -v ${{ github.workspace }}:/ws:rw --workdir=/ws \
+              arm64v8/ubuntu:20.04 \
+              bash -exc 'apt-get update && \
+              apt-get install sudo -y && \
+              sudo apt install Node.js && \
+              sudo apt install npm && \
+              Node.js -v && npm --version  && \
+              npm install && \
+              npm run pack'
