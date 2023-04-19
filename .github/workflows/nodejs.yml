@@ -42,7 +42,7 @@ jobs:
           run: |
             docker run --rm -v ${{ github.workspace }}:/ws:rw --workdir=/ws \
               arm64v8/ubuntu:20.04 \
-              bash -exc 'apt-get update && \
+              bash -exc 'apt-get update && \ 
               apt-get install curl -y && \
               apt-get install sudo -y && \
               curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && \
