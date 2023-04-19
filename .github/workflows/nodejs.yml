@@ -43,13 +43,13 @@ jobs:
             docker run --rm -v ${{ github.workspace }}:/ws:rw --workdir=/ws \
               arm64v8/ubuntu:20.04 \
               bash -exc 'apt-get update && \ 
-              apt-get install curl -y && \
-              apt-get install sudo -y && \
-              curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && \
-              sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys <PUBLIC KEY> && \
-              sudo apt-get install -y Node.js  && \
-              node --version  && \
-              npm --version && \
-              cd nodejs/serverless-microservices-functionapp-triparchiver && \
-              npm install && \
+              apt-get install curl -y && \ 
+              apt-get install sudo -y && \ 
+              curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && \ 
+              sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys <PUBLIC KEY> && \ 
+              sudo apt-get install -y Node.js  && \ 
+              node --version  && \ 
+              npm --version && \ 
+              cd nodejs/serverless-microservices-functionapp-triparchiver && \ 
+              npm install && \ 
               npm run pack' 
