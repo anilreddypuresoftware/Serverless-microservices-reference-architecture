@@ -29,6 +29,7 @@ jobs:
         cache-dependency-path: ./web/serverless-microservices-web
     - run: npm install
     - run: npm run build
+    
   armv64_job:
       name: Build and Test for arm64
       runs-on: ubuntu-20.04
@@ -48,8 +49,6 @@ jobs:
               export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" && \
               [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && \
               nvm install node && \
-              node --version  && \
-              npm --version && \  
               npm install && \
               export NODE_OPTIONS=--openssl-legacy-provider && \
               npm run build'   
