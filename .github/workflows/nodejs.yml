@@ -42,8 +42,7 @@ jobs:
           run: |
             docker run --rm -v ${{ github.workspace }}:/ws:rw --workdir=/ws \
               arm64v8/ubuntu:20.04 \
-              bash -exc 'apt-get install curl && \ 
-              apt-get install sudo -y && \
+              bash -exc 'apt-get update && apt-get -y install curl sudo && \
               sudo apt-get update && \
               sudo apt install Node.js && \
               sudo apt install npm && \
