@@ -45,10 +45,9 @@ jobs:
               bash -exc 'apt-get update && \
               apt-get install curl -y && \
               apt-get install sudo -y && \
-              curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash  && \
-              export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" && \
-              [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && \
-              nvm install node && \
+              curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && \
+              sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys <PUBLIC KEY> && \
+              sudo apt-get install -y Node.js  && \
               node --version  && \
               npm --version && \
               cd nodejs/serverless-microservices-functionapp-triparchiver && \
