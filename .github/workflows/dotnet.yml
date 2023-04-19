@@ -33,7 +33,7 @@ jobs:
           run: |
             docker run --rm -v ${{ github.workspace }}:/ws:rw --workdir=/ws \
               arm64v8/ubuntu:20.04 \
-              bash -exc 'apt install sudo -y && \
+              bash -exc 'apt install sudo && \
               sudo apt clean && \
               sudo apt update && \
               sudo apt install --fix-missing && \
