@@ -33,8 +33,11 @@ jobs:
           run: |
             docker run --rm -v ${{ github.workspace }}:/ws:rw --workdir=/ws \
               arm64v8/ubuntu:20.04 \
-              bash -exc 'apt-get update && \
-              apt-get install sudo && \
+              bash -exc 'apt-get install sudo && \
+              sudo apt clean && \
+              sudo apt update && \
+              sudo apt install --fix-missing && \
+              sudo apt update --fix-missing && \
               sudo apt install wget -y && \
               wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh && \
               sudo chmod +x ./dotnet-install.sh && \
